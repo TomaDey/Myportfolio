@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 html{
-    font-size: 10px;
+    font-size: 15px;
     font-family:'Montserrat',sans-serif; ;
 }
 a{
@@ -17,6 +17,11 @@ a{
     display:flex;
     align-items: center;
     justify-content: center;
+}
+img {
+    height: 40%;
+    width: 10%;
+    object-fit: cover;
 }
 /*hero section*/
 #hero{
@@ -53,6 +58,7 @@ animation-delay: 1.5s;
     animation-delay: 2.5s;
 }
 #hero h1:nth-child(3){
+    animation:text_reveal_name .5s ease forwards;
     animation-delay: 3s;
 }
 #hero h1 span {
@@ -78,7 +84,7 @@ animation-delay: 1.5s;
     letter-spacing: .1rem;
     margin-top:30px;
     transition: :.3s ease background-color;
-    transition-property:background-color, color;
+    transition-property:background-color,color;
 }
 #hero .cta:hover{
     color:white;
@@ -86,7 +92,186 @@ animation-delay: 1.5s;
 }
 /*end hero section*/
 
+/*start service section*/
+#services .service-container{
+display: grid;
+text-align: center;
+padding: 40px;
+}
+#services .services {
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#section-title{
+    font-size:4rem;
+    font-weight:300;
+    color:black;
+    margin-bottom:10px;
+    text-transform:uppercase;
+    letter-spacing:.2rem;
+    text-align: center;
+}
+#services .section-title span {
+    color:crimson;
+}
+#services .service-top p {
+    font-size:1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    letter-spacing:.05rem;
+}
+#services .service-bottom {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#services .service-item{
+    flex-basis:70%;
+    display: flex;
+    align-items: flex-start;
+    justify-content:center;
+    flex-direction: column;
+    padding:30px;
+    border-radius:10px;
+    background-image:url('images/sunflowersend.jpg');
+    background-size:cover;
+    margin:10px 5%;
+    position:relative;
+    z-index: 1;
+}
+#services .service-item::after{
+    content: ;
+    position:absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-color:black;
+    opacity: .8;
+    z-index: -1;
 
+}
+#services .service-bottom .icon{
+    height: 50px;
+    width: 50px;
+    margin-bottom: 20px;
+}
+#services .service-item h2{
+    font-size:2rem;
+    color:rgb(128, 24, 24);
+    margin-bottom:10px;
+    text-transform: uppercase;
+}
+#services .service-item p {
+    color:white;
+    text-align: left;
+    font-size:1.4rem;
+    line-height: 1.9rem;
+}
+/*project section*/
+#projects .projects {
+    flex-direction: column;
+    max-width:1200px;
+    margin:0 auto;
+    padding:100px 0;
+}
+#projects .projects-header h1{
+    margin-bottom: 50px;
+}
+#projects .section-title span {
+    color:crimson;
+}
+#projects .all-projects{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#projects .projects-item{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    margin:20px auto;
+    overflow: hidden;
+    border-radius:10px;
+}
+#projects .project-info {
+    padding:30px;
+    flex-basis:50%;
+    height:40%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(60deg,orange,yellow);
+    color:white;
+}
+#projects .project-info h1{
+    font-size: 4rem;
+    font-weight:500;
+}
+#projects .project-info h2 {
+    font-size: 4rem;
+    font-weight: 500;
+    margin-top:10px;
+}
+#projects .project-info p{
+    color:white;
+}
+#projects .project-img{
+    flex-basis:50%;
+    height:300px;
+    overflow:hidden;
+    position:relative;
+}
+#projects .project-img:after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 80%;
+    width: 100%;
+    background-color:black;
+    opacity:.7;
+}
+#projects .project-img img{
+    transition:.3s ease transform;
+}
+#projects .project-item:hover .project-img img{
+    transform:scale(1.1);
+}
+
+/*about section*/
+#about .about{
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width:1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+#about .col-left{
+    width:250px;
+    height:360px;
+}
+#about .col-right{
+    width:100%;
+}
+#about .col-right h2{
+    font-size:1.8rem;
+    font-weight: 500;
+    letter-spacing:.2rem;
+    margin-bottom:10px;
+}
+#about .col-right p{
+    margin-bottom:20px;
+}
 /* keyframes*/
 @keyframes text_reveal_box{
     50%{
@@ -101,5 +286,11 @@ animation-delay: 1.5s;
 @keyframes text_reveal{
     100%{
         color:rgb(250, 250, 250);
+    }
+}
+@keyframes text_reveal_name{
+    100%{
+        color:crimson;
+        font-weight: 900;
     }
 }
